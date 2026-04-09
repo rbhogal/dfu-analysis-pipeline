@@ -96,6 +96,12 @@ python -c "import cv2; import numpy; import pandas; import matplotlib; print('al
 
 If a version number prints without errors you are fully set up.
 
+### 5. Select Interpreter
+
+Open the command palette — Cmd+Shift+P
+Type Python: Select Interpreter
+Look for the one that says dfu-analysis
+
 ### Download Dataset
 
 1. Clone or download the dataset from the [FUSeg GitHub repository](https://github.com/uwm-bigdata/wound-segmentation/tree/master/data/Foot%20Ulcer%20Segmentation%20Challenge)
