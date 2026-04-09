@@ -1,3 +1,5 @@
+![SJSU](./SJSU_Primary_mark_Web.png)
+
 # DFU Analysis Pipeline
 
 ## Project Structure
