@@ -119,3 +119,9 @@ data/
     └── test/
         └── images/
 ```
+
+---
+
+### Git Workflow
+
+See 👉 [.docs/workflow.md](./docs/workflow.md)
