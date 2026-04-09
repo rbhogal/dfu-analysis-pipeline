@@ -1,5 +1,3 @@
-![Alt text](./SJSU_Primary_mark_Web.png)
-
 # Git Workflow
 
 ## **Branch Naming Format**
