@@ -2,7 +2,7 @@
 
 # DFU Analysis Pipeline
 
-Classical computer vision pipeline for diabetic foot ulcer segmentation, feature extraction, and severity analysis on the FUSeg dataset.
+Classical computer vision pipeline for diabetic foot ulcer segmentation, feature extraction, and rule-based severity classification on the FUSeg dataset.
 
 ---
 
@@ -18,22 +18,10 @@ University of Wisconsin-Milwaukee, MICCAI 2021
 
 ---
 
-### Download
-
-1. Clone or download the dataset from the [FUSeg GitHub repository](https://github.com/uwm-bigdata/wound-segmentation/tree/master/data/Foot%20Ulcer%20Segmentation%20Challenge)
-2. Place files in the following structure:
+## Pipeline Architecture
 
 ```
-data/
-└── fuseg/
-    ├── train/
-    │   ├── images/
-    │   └── labels/
-    ├── validation/
-    │   ├── images/
-    │   └── labels/
-    └── test/
-        └── images/
+Raw image → Preprocessing → Segmentation → Feature Extraction → Severity Classification → Output
 ```
 
 ---
@@ -63,8 +51,56 @@ dfu-analysis-pipeline/
 
 ---
 
-## Pipeline Architecture
+## Setup and Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/rbhogal/dfu-analysis-pipeline
+cd dfu-analysis-pipeline
+```
+
+### 2. Create and activate the conda environment
+
+```bash
+conda create -n dfu-analysis python=3.10
+conda activate dfu-analysis
+```
+
+You only need to create the environment once. Every time you return to work on this project just run:
+
+```bash
+conda activate dfu-analysis
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Verify installation
+
+```bash
+python -c "import cv2; import numpy; import pandas; import matplotlib; print('all good:', cv2.__version__)"
+```
+
+If a version number prints without errors you are fully set up.
+
+### Download Dataset
+
+1. Clone or download the dataset from the [FUSeg GitHub repository](https://github.com/uwm-bigdata/wound-segmentation/tree/master/data/Foot%20Ulcer%20Segmentation%20Challenge)
+2. Place files in the following structure:
 
 ```
-Raw image → Preprocessing → Segmentation → Feature Extraction → Analysis → Output
+data/
+└── fuseg/
+    ├── train/
+    │   ├── images/
+    │   └── labels/
+    ├── validation/
+    │   ├── images/
+    │   └── labels/
+    └── test/
+        └── images/
 ```
