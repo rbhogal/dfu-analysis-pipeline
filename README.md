@@ -55,6 +55,15 @@ dfu-analysis-pipeline/
 
 ### 1. Clone the repository
 
+Open VS Code terminal or any terminal, then navigate to your desired folder:
+
+```
+cd ~/<folder-name>
+```
+
+- Replace `~/<folder-name>` with wherever you want to store the project.
+- Common locations: `~/repos` or `~/projects`
+
 ```bash
 git clone https://github.com/rbhogal/dfu-analysis-pipeline
 cd dfu-analysis-pipeline
@@ -63,7 +72,7 @@ cd dfu-analysis-pipeline
 ### 2. Create and activate the conda environment
 
 ```bash
-conda create -n dfu-analysis python=3.10
+conda create -n dfu-analysis python=3.13.9
 conda activate dfu-analysis
 ```
 
