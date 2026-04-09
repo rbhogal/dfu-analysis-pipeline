@@ -2,11 +2,11 @@
 
 ## **Branch Naming Format**
 
+```
 main ← stable, working code only
 dev ← integration branch, merge here first
-rohit  
-dania  
-neha
+your-name
+```
 
 ---
 
