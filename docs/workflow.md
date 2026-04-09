@@ -10,43 +10,16 @@ your-name
 
 ---
 
-## **INITIAL SETUP (Do This Once)**
-
-### **Step 1: Navigate to where you want the project**
-
-Open VS Code terminal or any terminal, then navigate to your desired folder:
-
-```
-cd ~/<folder-name>
-```
-
-- Replace `~/<folder-name>` with wherever you want to store the project.
-- Common locations: `~/repos` or `~/projects`
-
-### **Step 2: Clone the repository**
-
-```
-git clone https://github.com/yourusername/BME-133.git
-cd BME-133
-```
-
-- `git clone` copies the GitHub repo to your computer.
-- `cd` changes into the repo folder.
-
-**✅ Setup complete!** You only need to do this once. Now follow the "Regular Workflow" below every time you work on the project.
-
----
-
 ## **REGULAR WORKFLOW (Do This Every Time You Work)**
 
 ### **Step 1: Navigate to your project folder**
 
 ```bash
-cd path/to/BME-133
+cd path/to/dfu-analysis-pipeline
 ```
 
-- Replace `path/to/BME-133` with the actual path to your project folder.
-- Example: `cd ~/repos/BME-133`
+- Replace `path/to/dfu-analysis-pipeline` with the actual path to your project folder.
+- Example: `cd ~/repos/dfu-analysis-pipeline
 
 ---
 
