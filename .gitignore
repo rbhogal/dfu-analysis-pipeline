@@ -1,0 +1,15 @@
+# data — keep local only
+data/*
+!data/.gitkeep
+
+# outputs — generated files, keep local
+outputs/**
+!outputs/annotated_images/.gitkeep
+!outputs/plots/.gitkeep
+
+# python
+__pycache__/
+*.pyc
+.env
+.DS_Store
+.ipynb_checkpoints/
