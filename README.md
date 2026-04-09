@@ -1,4 +1,4 @@
-![SJSU](./SJSU_Primary_mark_Web.png)
+![SJSU](./docs/assets/SJSU_Primary_mark_Web.png)
 
 # DFU Analysis Pipeline
 
