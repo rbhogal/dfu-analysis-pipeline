@@ -19,7 +19,7 @@ cd path/to/dfu-analysis-pipeline
 ```
 
 - Replace `path/to/dfu-analysis-pipeline` with the actual path to your project folder.
-- Example: `cd ~/repos/dfu-analysis-pipeline
+- Example: `cd ~/repos/dfu-analysis-pipeline`
 
 ---
 
