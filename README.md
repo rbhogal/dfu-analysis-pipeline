@@ -2,6 +2,10 @@
 
 # DFU Analysis Pipeline
 
+Classical computer vision pipeline for diabetic foot ulcer segmentation, feature extraction, and severity analysis on the FUSeg dataset.
+
+---
+
 ## Project Structure
 
 ```
