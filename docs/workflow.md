@@ -114,7 +114,7 @@ git push origin main
 
 ---
 
-### **Step 9: Keep working or start a new exercise**
+### **Step 9: Keep working or start a new branch**
 
 **To start a new branch:**
 
