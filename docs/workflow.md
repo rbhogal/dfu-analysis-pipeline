@@ -4,8 +4,7 @@
 
 ```
 main ← stable, working code only
-dev ← integration branch, merge here first
-your-name
+your-name ← your branch
 ```
 
 ---
