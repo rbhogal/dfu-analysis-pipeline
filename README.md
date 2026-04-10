@@ -124,4 +124,4 @@ data/
 
 ## Git Workflow
 
-See 👉 [.docs/workflow.md](./docs/workflow.md)
+See 👉 [./docs/workflow.md](./docs/workflow.md)
