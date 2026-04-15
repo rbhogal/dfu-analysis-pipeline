@@ -4,7 +4,8 @@
 
 ```
 main ← stable, working code only
-your-name ← your branch
+your-name ← your working branch
+
 ```
 
 ---
