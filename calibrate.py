@@ -29,9 +29,9 @@ import numpy as np
 # CONFIGURATION
 # ─────────────────────────────────────────────────────────────────────────────
 
-GRANULATION_IMAGES = "data/calibration/images/granulation"
-SLOUGH_IMAGES = "data/calibration/images/slough"
-IMAGE_DIR = SLOUGH_IMAGES
+GRANULATION_IMAGES_DIR = "data/calibration/images/granulation"
+SLOUGH_IMAGES_DIR = "data/calibration/images/slough"
+IMAGE_DIR = SLOUGH_IMAGES_DIR # * Using a selected sample of 20 images for each in calibration folder. 
 WINDOW_SIZE = (512, 512)
 
 
