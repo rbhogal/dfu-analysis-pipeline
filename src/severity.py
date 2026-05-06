@@ -10,7 +10,7 @@ LARGE_AREA_THRESHOLD = 5000
 
 class SeverityClassifier:
 
-    def extract_tissue_composition(self, image, pred_mask, hsv_image):
+    def extract_tissue_composition(self, pred_mask, hsv_image):
         h, s, v = cv2.split(hsv_image)
         wound = pred_mask > 0
         total = np.count_nonzero(wound)

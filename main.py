@@ -160,7 +160,7 @@ def main():
 
         # ── SEVERITY ──────────────────────────────────────────────
 
-        tissue = severity.extract_tissue_composition(image, pred_mask, hsv)
+        tissue = severity.extract_tissue_composition(pred_mask, hsv)
         label, score = severity.classify_severity(
             area,
             tissue["granulation_pct"],
