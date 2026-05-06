@@ -25,6 +25,8 @@ import os
 import sys
 import numpy as np
 import pandas as pd
+import glob
+import cv2
 
 # ─────────────────────────────────────────────────────────────────────────────
 # IMPORTS
@@ -94,6 +96,21 @@ def main():
     overlays = []  # tracks (image_id, iou_tier) for overlay plot
 
     print(f"\n[INFO] Running pipeline on {len(pairs)} images...\n")
+
+    # Compute threshold from training data
+    train_masks = glob.glob("data/train/labels/*.png")
+    train_areas = []
+    for mask_path in train_masks:
+        mask = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
+        if mask is not None:
+            area = np.count_nonzero(mask > 0)
+            if area > 0:
+                train_areas.append(area)
+
+    LARGE_AREA_THRESH = float(np.percentile(train_areas, 75))
+    print(
+        f"[INFO] Large area threshold (75th pct from training): {LARGE_AREA_THRESH:.0f} px"
+    )
 
     # ── 2. MAIN LOOP ──────────────────────────────────────────────
 
@@ -203,7 +220,6 @@ def main():
     # then compute failure reasons using real median area
     if len(df_valid) > 0:
         median_area = df_valid["area_px"].median()
-        large_area_thresh = df_valid["area_px"].quantile(0.75)
         analyzer.median_area = median_area
 
         # recompute failure reasons now that we have dataset-level stats
