@@ -18,14 +18,13 @@ Usage:
 Outputs:
     outputs/annotated_images/   — original, predicted, gt overlays + thumbs
     outputs/plots/              — all 9 plots
-    outputs/metrics.csv         — per-image results DataFrame
+    outputs/results.csv         — per-image results DataFrame
 """
 
 import os
 import sys
 import numpy as np
 import pandas as pd
-import cv2
 
 # ─────────────────────────────────────────────────────────────────────────────
 # IMPORTS
@@ -261,11 +260,11 @@ def main():
         )
 
         print(f"\nWound Area Statistics (Aim 1):")
-        print(f"  Mean area:              {df_valid['area_px'].mean():.0f} px")
-        print(f"  Median area:            {df_valid['area_px'].median():.0f} px")
-        print(f"  Std area:               {df_valid['area_px'].std():.0f} px")
-        print(f"  Min area:               {df_valid['area_px'].min():.0f} px")
-        print(f"  Max area:               {df_valid['area_px'].max():.0f} px")
+        print(f"  Mean area:              {stats['mean']:.0f} px")
+        print(f"  Median area:            {stats['median']:.0f} px")
+        print(f"  Std area:               {stats['std']:.0f} px")
+        print(f"  Min area:               {stats['min']:.0f} px")
+        print(f"  Max area:               {stats['max']:.0f} px")
 
         print(f"\nBoundary Morphology (Aim 2):")
         for label in ["regular", "moderate", "irregular"]:
