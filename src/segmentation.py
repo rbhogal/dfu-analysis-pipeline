@@ -17,7 +17,7 @@ GRANULATION_LOWER_1 = np.array([0, 140, 51])  # lower red hue range
 GRANULATION_UPPER_1 = np.array([16, 255, 255])
 
 GRANULATION_LOWER_2 = np.array([166, 140, 51])  # upper red hue range (wraps around 180)
-GRANULATION_UPPER_2 = np.array([163, 255, 255])
+GRANULATION_UPPER_2 = np.array([180, 255, 255])
 
 # Slough tissue — yellow/tan hues (stalled healing, necrotic debris)
 SLOUGH_LOWER = np.array([15, 36, 199])
@@ -374,7 +374,7 @@ class WoundSegmenter:
         Returns:
             np.ndarray: Image with colored mask blended at self.overlay_alpha opacity
         """
-        overlay = image.copy() # TODO: do we need this? Not being used
+        overlay = image.copy()  # TODO: do we need this? Not being used
         colored_region = np.zeros_like(image)
         colored_region[mask > 0] = color
         blended = cv2.addWeighted(
