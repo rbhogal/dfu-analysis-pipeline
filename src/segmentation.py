@@ -374,7 +374,6 @@ class WoundSegmenter:
         Returns:
             np.ndarray: Image with colored mask blended at self.overlay_alpha opacity
         """
-        overlay = image.copy()  # TODO: do we need this? Not being used
         colored_region = np.zeros_like(image)
         colored_region[mask > 0] = color
         blended = cv2.addWeighted(
