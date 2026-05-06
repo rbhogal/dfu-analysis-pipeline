@@ -226,10 +226,10 @@ def main():
         stats = {}
         print("[WARNING] No valid segmentations — cannot compute statistics.")
 
-    # save metrics
-    metrics_path = os.path.join(OUTPUT_DIR, "metrics.csv")
-    df.to_csv(metrics_path, index=False)
-    print(f"\n[INFO] Metrics saved to {metrics_path}")
+    # save results
+    results_path = os.path.join(OUTPUT_DIR, "results.csv")
+    df.to_csv(results_path, index=False)
+    print(f"\n[INFO] Metrics saved to {results_path}")
 
     # ── 4. PRINT SUMMARY ──────────────────────────────────────────
 
@@ -356,7 +356,7 @@ def main():
     dataset.print_summary(mean_iou=df_valid["iou"].mean())
 
     print("\nPipeline complete.")
-    print(f"  Metrics:  {metrics_path}")
+    print(f"  Results:  {results_path}")
     print(f"  Overlays: {os.path.join(OUTPUT_DIR, 'annotated_images/')}")
     print(f"  Plots:    {plots_dir}")
     print()
