@@ -143,7 +143,6 @@ def main():
         # ── AREA + ERROR ANALYSIS ─────────────────────────────────
 
         area = analyzer.calc_area(pred_mask)
-        perimeter = analyzer.calc_perimeter(contour)
         mean_brightness = analyzer.calc_mean_brightness(image, pred_mask)
         iou_tier = analyzer.classify_iou_performance(iou)
 
