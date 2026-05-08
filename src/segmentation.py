@@ -13,6 +13,9 @@ import numpy as np
 # ─────────────────────────────────────────────────────────────────────────────
 
 # Granulation tissue — red/pink hues (healthy healing tissue)
+# lower_bound = np.array([H_min, S_min, V_min])
+# upper_bound = np.array([H_max, S_max, V_max])
+
 GRANULATION_LOWER_1 = np.array([0, 140, 51])  # lower red hue range
 GRANULATION_UPPER_1 = np.array([16, 255, 255])
 
@@ -57,7 +60,6 @@ class WoundSegmenter:
 
     Logical complexity:
     - Multi-branch hue detection selects masking strategy per image
-    - Contour selection handles failure, split wound, and success cases
     - IoU handles zero-union edge case safely
     """
 
@@ -105,18 +107,18 @@ class WoundSegmenter:
         blurred = cv2.GaussianBlur(resized, (5, 5), 0)
 
         # convert to HSV
-        hsv = cv2.cvtColor(blurred, cv2.COLOR_BGR2HSV)
+        hsv = cv2.cvtColor(blurred, cv2.COLOR_BGR2HSV) # Same shape of blurred (512, 512, 3) but now 3 channels H, S, V, instead of B, G, R
 
         # compute mean hue across non-background pixels
         # background pixels tend to have very low saturation — filter them out
-        saturation_channel = hsv[:, :, 1]
+        saturation_channel = hsv[:, :, 1] # second channel (0=H, 1=S, 2=V)
         non_background = saturation_channel > 30  # pixels with meaningful saturation
 
-        if np.sum(non_background) == 0:
+        if np.sum(non_background) == 0: # counts num of True values
             # fallback if no meaningful pixels found
             hue_label = "mixed"
         else:
-            mean_hue = np.mean(hsv[:, :, 0][non_background])
+            mean_hue = np.mean(hsv[:, :, 0][non_background]) # flattens to 1d array of hues to get mean from
 
             # classify dominant hue
             # ── logical complexity: multi-branch hue classification ──
@@ -187,9 +189,9 @@ class WoundSegmenter:
         Returns:
             np.ndarray: Binary mask for granulation tissue
         """
-        mask1 = cv2.inRange(hsv, GRANULATION_LOWER_1, GRANULATION_UPPER_1)
-        mask2 = cv2.inRange(hsv, GRANULATION_LOWER_2, GRANULATION_UPPER_2)
-        return cv2.bitwise_or(mask1, mask2)
+        mask1 = cv2.inRange(hsv, GRANULATION_LOWER_1, GRANULATION_UPPER_1)  # H≥0,  S≥140, V≥51 & H≤16, S≤255, V≤255
+        mask2 = cv2.inRange(hsv, GRANULATION_LOWER_2, GRANULATION_UPPER_2) 
+        return cv2.bitwise_or(mask1, mask2) # if either value is 255 -> 255 else 0
 
     def _build_slough_mask(self, hsv):
         """

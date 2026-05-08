@@ -72,7 +72,7 @@ class WoundDataset:
 
         # validate mask is binary — only 0 and 255 allowed
         unique_values = set(np.unique(mask))
-        allowed_values = {0, 1, 255}
+        allowed_values = {0, 1, 255} # alt syntax for set in python
 
         if not unique_values.issubset(allowed_values):
             print(f"[WARNING] Non-binary mask detected, applying correction: {mask_path}")
