@@ -6,9 +6,8 @@
 
 Classical computer vision pipeline for diabetic foot ulcer segmentation, feature extraction, and rule-based severity classification on the FUSeg dataset.
 
----
-## View Presentation
-https://rbhogal.github.io/dfu-presentation/
+## [👉 View Presentation](https://rbhogal.github.io/dfu-presentation/)
+
 ---
 
 ## Dataset
